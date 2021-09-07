@@ -1,29 +1,32 @@
 # Get_MovieName_RunLength_In_Perl
-Perl script parses a HTML file, extracts just the Movie Name and Run Length - Helps to check if it's a full movie or not. 
+Perl script parses a HTML file, extracts just the Movie Name and Run Length - Helps to check if it's a full movie or not in YouTube.
 
+This is an experimental perl script that is used to get a list of all movies and it's run length from YouTube collected in a HTML file.
 
-This is an experimental perl script that is used to get a list of all movies and it's run length from you tube collected in a HTML file.
+The use case is : Lets say you know the name of a movie and would like to see if such a movie exists in Youtube.
 
-The use case is : lets say you know the name of a movie and would like to see if such a movie exists in Youtube.
+Currently if user goes to Youtube and searches for the movie name - it lists 100s of movies, or videos that have differing run lengths, some may be 2 minutes, and some are advertisements, and some are not even movies but something else with the same name.
+The objective is to collect the names of the videos from Youtube, dump it to an external flat file, and then parse it to extract just the name and the run length of the videos, thereby saving time.
 
-Currently if user goes to Youtube and searches for the movie name - it lists 100s of movies that have differing run lengths, some may be 2 minutes, and some are advertisements, and some are not even movies but something else with the same name.
-The objective is to collect the names of the videos from Youtube, dump it to a file, and then parse it to extract just the name and the run length of the videos.
-
-By looking at the Run length when you run the script - one can determine if it's a Movie ( typically around 1hr 30 minutes ) and go there directly.
+By looking at the Run length when you run the script - one can determine if it's a Movie ( typically around 1 hr 30 minutes ) and go there directly, saving time.
 
 Steps :
 
-1. Get the list of movies from Youtube using curl tool, and redirect it to an external file 
+1. Get the list of movies from Youtube using curl tool, and redirect it to an external file .
+Here I'm interested in a Argentinian Romantic-Comedy movie called Amapola.
+The result below gives me lot of videos which have the same name, but differing or varying run lengths. ( The script will later parse this )
 
 curl https://www.youtube.com/results?search_query=amapola > amapola.html
 
 
 2. ./gettitle.sh 
-This shell script calls perl inside, which parses the HTML file and lists the videos and it's run lengths.
-By looking at the run lengths ( 2 minutes Versus 1 hr 30 minutes ) - one can determine whether it's a movie or not. 
+This shell script calls Perl inside, which parses the HTML file and lists the videos and it's run lengths.
+By looking at the run lengths ( some may be 2 minutes, some may be  1 hr 30 minutes and so on) - one can determine whether it's a movie or not. 
 Easier to find that going thru multiple pages at a time in Youtube and using command line.
 
-Note : You will have to give it execute permissions to the gettitle.sh script.
+Note : You will have to give it execute permissions to the gettitle.sh script. 
+
+chmod 755 gettitle.sh
 
 I got the idea of using the search and replace regular expressions using this link.
 
