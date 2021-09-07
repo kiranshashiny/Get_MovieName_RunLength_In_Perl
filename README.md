@@ -46,3 +46,11 @@ A sample output :
 ![image](https://user-images.githubusercontent.com/14288989/132293496-b515d5ca-157b-45a8-a0f5-e789e529670b.png)
 
 
+The gettitle.sh
+
+![image](https://user-images.githubusercontent.com/14288989/132293613-7a761d84-ce51-4e3b-b4d5-2b20531d2e26.png)
+
+The Video title, run length and other details of the video as-is in the HTML file.
+The perl script extracts such paragraphs ( all in 1 big file ) and reports it on the stdout.
+
+![image](https://user-images.githubusercontent.com/14288989/132293876-1f732b4c-07a8-40e9-a475-be923315c27a.png)
