@@ -41,4 +41,8 @@ How to determine if it's a movie or just another blob of 1.5 minutes.
 
 
 
+A sample output :
+
+![image](https://user-images.githubusercontent.com/14288989/132293496-b515d5ca-157b-45a8-a0f5-e789e529670b.png)
+
 
